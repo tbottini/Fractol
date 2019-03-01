@@ -6,7 +6,7 @@
 #    By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/15 18:09:49 by yberramd          #+#    #+#              #
-#    Updated: 2019/03/01 18:38:09 by tbottini         ###   ########.fr        #
+#    Updated: 2019/03/01 21:05:51 by tbottini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -130,14 +130,10 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME) :
-	@echo "Compilation Libft En Cours"
-	@make compile
-
 %.o		:		%.c
 	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
 
-compile	: $(OBJS)
+$(NAME)	: $(OBJS)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@echo "Compilation Libft Terminee"
