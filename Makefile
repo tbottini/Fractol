@@ -6,7 +6,7 @@
 #    By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/15 18:09:49 by yberramd          #+#    #+#              #
-#    Updated: 2019/03/01 19:48:13 by tbottini         ###   ########.fr        #
+#    Updated: 2019/03/01 20:08:16 by tbottini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,14 +55,9 @@ fclean		:		clean
 	@make fclean -C libft
 	@rm -rf $(NAME)
 
-debug 		:		$(OBJS)
-	@make -C libft
-	@$(CC) -g -o $(NAME) $(CFLAGS) $(SRCS) $(LIB)
-	@echo a
-segv 		:		$(OBJS)
-	@make -C libft
-	@$(CC) -g -fsanitize=address -o $(NAME) $(CFLAGS) $(SRCS) $(LIB)
+start		:		all
+	$(shell ./$(NAME) mandelbrot)
 
 re			:		fclean all
 
-.PHONY: all clean flcean re debug segv start
+.PHONY: all clean flcean re start
