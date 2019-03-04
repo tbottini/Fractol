@@ -6,7 +6,7 @@
 /*   By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 15:28:34 by tbottini          #+#    #+#             */
-/*   Updated: 2019/02/27 18:17:03 by tbottini         ###   ########.fr       */
+/*   Updated: 2019/03/04 16:26:52 by tbottini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,11 @@ void				ct_gestion(t_ct *ct, int key);
 t_ct				*ct_get();
 void				color_decomp(uint8_t rgb[3], unsigned int color);
 void				fractol_reinit(t_fractol *fractol);
-
+t_vct2				*vct2_value(t_vct2 *vct, int x, int y);
+t_mlx_data			*mlx_data_get(char *screen_name, int sx, int sy);
+void				*mlx_data_close(t_mlx_data *fdf);
+unsigned int		color_rgb(unsigned char r, unsigned char g,
+							unsigned char b);
+void				img_pixel(t_mlx_data *mlx, t_vct2 vct,
+							unsigned int color);
 #endif

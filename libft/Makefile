@@ -6,7 +6,7 @@
 #    By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/15 18:09:49 by yberramd          #+#    #+#              #
-#    Updated: 2019/03/01 21:05:51 by tbottini         ###   ########.fr        #
+#    Updated: 2019/03/04 16:35:48 by tbottini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,7 @@ CC			=		gcc
 
 CFLAGS		=		-Wall -Wextra -Werror
 
-LIB 		=		libft/libft.a -L /usr/local/lib/ -lmlx\
-					-framework OpenGL \
-					-framework AppKit -lm
+LIB 		=
 
 SRCS		=		ft_isspace.c			\
 					get_next_line.c 		\
@@ -99,39 +97,14 @@ SRCS		=		ft_isspace.c			\
 					ft_toupper.c			\
 					ft_strsplit.c			\
 					ft_strtrim.c 			\
-					calc_fct.c				\
-					camera_del.c			\
-					camera_new.c			\
-					color_rgb.c				\
-					cs_color.c				\
-					cs_st.c					\
-					img_pixel.c				\
-					img_trait.c				\
-					input_cs.c				\
-					input_mortho.c			\
-					input_mpers.c			\
-					mlx_data_close.c		\
-					mlx_data_get.c			\
-					model_to_world.c		\
-					vector2_new.c			\
-					vector2_print.c			\
-					vector2_value.c			\
-					vector3_calc.c			\
-					vector3_cpy.c			\
-					vector3_negate.c		\
-					vector3_new.c			\
-					vector3_print.c			\
-					vector3_rotation.c		\
-					vector3_value.c			\
-					wall_nb.c				\
-					world_to_view.c			\
+
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 %.o		:		%.c
-	@$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
+	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
 
 $(NAME)	: $(OBJS)
 	@ar rc $(NAME) $(OBJS)

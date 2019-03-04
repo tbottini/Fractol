@@ -6,7 +6,7 @@
 /*   By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/18 15:19:56 by tbottini          #+#    #+#             */
-/*   Updated: 2019/02/22 19:48:38 by tbottini         ###   ########.fr       */
+/*   Updated: 2019/03/04 16:27:02 by tbottini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,44 +234,5 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 char				*ft_strrev(char *str);
 void				ft_swap(char *a, char *b);
 int					ft_pow(int nb, int pow);
-t_vct2				*vct2_new(int x, int y);
-t_vct2				*vct2_value(t_vct2 *vct, int x, int y);
-void				vct2_print(char *msg, t_vct2 vct);
-t_vct3				*vct3_new(int x, int y, int z);
-t_vct3				*vct3_value(t_vct3 *vct, int x, int y, int z);
-void				vct3_print(char *info, t_vct3 vct);
-t_vct3				*vct3_add(t_vct3 *vct1, t_vct3 *vct2);
-t_vct3				*vct3_mul(t_vct3 *vct1, int mul);
-t_vct3				*vct3_cpy(t_vct3 *vct1, t_vct3 *vct2);
-t_vct3				*vct3_negate(t_vct3 *vct);
-t_vct3				*vct3_rotation(t_vct3 *pos, t_vct3 rot);
-t_vct3				*vct3_calc(t_vct3 *vct1, t_vct3 *vct2,
-							int(*f)(int, int));
-int					sub(int a, int b);
-int					add(int a, int b);
-int					divi(int a, int b);
-int					mul(int a, int b);
-t_camera			*camera_new(int fov);
-
-void				camera_ajust(t_mlx_data *fdf);
-void				*camera_del(t_camera *cam);
-void				color_stock_set(t_color_stock *cs);
-t_col				cs_color(t_color_stock cs, char color);
-t_mlx_data			*mlx_data_get(char *screen_name, int sx, int sy);
-int					input_cs(int input, t_color_stock *cs);
-void				*mlx_data_close(t_mlx_data *fdf);
-unsigned int		color_rgb(unsigned char r, unsigned char g,
-							unsigned char b);
-void				img_pixel(t_mlx_data *mlx, t_vct2 vct,
-							unsigned int color);
-void				img_trait(t_mlx_data *fdf, t_vct2 vct1, t_vct2 vct2,
-							t_col col);
-t_vct3				*model_to_world(t_vct3 local_pos, t_vct3 trans, t_vct3 rot,
-							int sca);
-t_vct2				*world_to_view(t_vct2 *cursor, t_mlx_data mlx, t_camera cam,
-							t_vct3 w_pos);
-int					mouse_motion(int x, int y, t_mlx_data *mlx, t_camera *cam);
-int					wall_nb(int nb, int min, int max);
-t_mlx_data			*mlx_data_connection(t_mlx_data *ml, char *name);
 
 #endif

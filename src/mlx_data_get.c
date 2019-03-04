@@ -6,11 +6,11 @@
 /*   By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 16:26:12 by tbottini          #+#    #+#             */
-/*   Updated: 2019/02/22 19:43:56 by tbottini         ###   ########.fr       */
+/*   Updated: 2019/03/04 16:33:14 by tbottini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fractol.h"
 
 t_mlx_data		*mlx_data_init(t_mlx_data *ml, int sx, int sy)
 {
@@ -49,4 +49,17 @@ t_mlx_data		*mlx_data_get(char *screen_name, int sx, int sy)
 		return (NULL);
 	ml = mlx_data_init(ml, sx, sy);
 	return (mlx_data_connection(ml, screen_name));
+}
+
+void			*mlx_data_close(t_mlx_data *mlx)
+{
+	if (mlx->img)
+		mlx_destroy_image(mlx->mlx, mlx->img);
+	if (mlx->win)
+		mlx_destroy_window(mlx->mlx, mlx->win);
+	if (mlx->mlx)
+		free(mlx->mlx);
+	if (mlx)
+		free(mlx);
+	return (NULL);
 }
