@@ -6,7 +6,7 @@
 /*   By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 19:12:22 by tbottini          #+#    #+#             */
-/*   Updated: 2019/02/22 19:28:57 by tbottini         ###   ########.fr       */
+/*   Updated: 2019/03/04 18:15:36 by tbottini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		input_fractol(int key, t_fractol *fractol)
 		ct_gestion(fractol->ct, key);
 	if (key == KEY_W || key == KEY_S || key == KEY_A || key == KEY_D)
 		input_move(key, fractol);
-	else if (key == KEY_R || key == KEY_F)
+	else if ((key == KEY_R || key == KEY_F) && fractol->imax > 25)
 		fractol->imax += (key == KEY_R) ? 25 : -25;
 	else if (key >= KEY_1 && key <= KEY_3)
 	{
