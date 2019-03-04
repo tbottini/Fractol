@@ -6,13 +6,13 @@
 #    By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/15 18:09:49 by yberramd          #+#    #+#              #
-#    Updated: 2019/03/04 16:35:48 by tbottini         ###   ########.fr        #
+#    Updated: 2019/03/04 16:52:36 by tbottini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=		libft.a
 
-INCLUDE 	=		-I /usr/local/include -I ../include
+INCLUDE 	=		-I ../include
 
 CC			=		gcc
 
@@ -106,7 +106,7 @@ all: $(NAME)
 %.o		:		%.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
 
-$(NAME)	: $(OBJS)
+$(NAME)	: ../include/libft.h $(OBJS)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@echo "Compilation Libft Terminee"

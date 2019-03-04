@@ -6,7 +6,7 @@
 #    By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/15 18:09:49 by yberramd          #+#    #+#              #
-#    Updated: 2019/03/04 16:37:42 by tbottini         ###   ########.fr        #
+#    Updated: 2019/03/04 16:52:54 by tbottini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC			=		gcc
 
 CFLAGS		=		-Wall -Wextra -Werror
 
-INCLUDE 	=		-I include -I /usr/include
+INCLUDE 	=		-I include
 
 LIB 		=		libft/libft.a -L /usr/local/lib/ -lmlx\
 					-framework OpenGL \
@@ -40,7 +40,7 @@ all			: 		$(NAME)
 %.o			:		%.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
 
-$(NAME)		:		$(OBJS) include/libft.h
+$(NAME)		:		 include/libft.h include/fractol.h $(OBJS)
 	@make -C libft/
 	@$(CC) $(CFLAGS) $(LIB) -o $(NAME) $(OBJS)
 	@echo "Compilation" $(NAME) "Terminee"
