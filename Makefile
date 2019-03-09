@@ -6,7 +6,7 @@
 #    By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/15 18:09:49 by yberramd          #+#    #+#              #
-#    Updated: 2019/03/09 19:48:52 by tbottini         ###   ########.fr        #
+#    Updated: 2019/03/09 19:50:08 by tbottini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INCLUDE 	=		-I include
 
 LIB 		=		libft/libft.a -L /usr/local/lib/ -lmlx\
 					-framework OpenGL \
-					-framework AppKit -l
+					-framework AppKit -lm
 
 SRCS		=		src/fractol.c		\
 					src/parseur.c		\
