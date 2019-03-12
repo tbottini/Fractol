@@ -6,7 +6,7 @@
 /*   By: tbottini <tbottini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 15:28:34 by tbottini          #+#    #+#             */
-/*   Updated: 2019/03/04 16:44:45 by tbottini         ###   ########.fr       */
+/*   Updated: 2019/03/12 14:33:54 by tbottini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,81 @@
 
 # include <stdint.h>
 # include "libft.h"
+# include "mlx.h"
+# include <math.h>
+# include "/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers/X11/X.h"
+
+# define PI 3.1415926535
+# define KEY_W 		13
+# define KEY_Y		16
+# define KEY_U 		32
+# define KEY_I 		34
+# define KEY_H 		4
+# define KEY_J		38
+# define KEY_K		40
+# define KEY_A 		0
+# define KEY_S 		1
+# define KEY_D 		2
+# define KEY_Q 		12
+# define KEY_E 		14
+# define KEY_R 		15
+# define KEY_F 		3
+# define KEY_P		35
+# define KEY_O		31
+# define KEY_U		32
+# define KEY_I		34
+# define KEY_T 		17
+# define KEY_G		5
+# define KEY_CTRL 	256
+# define KEY_SHIFT 	257
+# define KEY_ESC	53
+# define WHEEL_UP 	5
+# define WHEEL_DOWN 4
+# define RM_BUTTON	1
+# define LM_BUTTON	2
+# define KEY_1		 18
+# define KEY_2		 19
+# define KEY_3		 20
+# define KEY_4		 21
+# define KEY_5		 22
+# define WHITE		color_rgb(255, 255, 255)
+# define BLUE		color_rgb(0, 0, 255)
+# define RED		color_rgb(255, 0, 0)
+# define GREEN		color_rgb(0, 255, 0)
+# define YELLOW		color_rgb(255, 255, 0)
+# define PURPLE		color_rgb(255, 0, 255)
+# define CYAN		color_rgb(0, 255, 255)
+# define BLACK		color_rgb(0, 0, 0)
+# define BEIGE		color_rgb(245, 245, 210)
+# define PCHARRIE 	color_rgb(125, 0, 50)
+# define FRATARDI 	color_rgb(75, 0, 15)
+
+typedef struct		s_col
+{
+	unsigned int	c;
+}					t_col;
+
+typedef struct		s_vct2
+{
+	int				x;
+	int				y;
+}					t_vct2;
+
+typedef struct		s_fvct2
+{
+	float			x;
+	float			y;
+}					t_fvct2;
+
+typedef struct		s_mlx_data
+{
+	void			*mlx;
+	void			*win;
+	void			*img;
+	unsigned		*screen;
+	int				sx;
+	int				sy;
+}					t_mlx_data;
 
 typedef struct		s_ct
 {
